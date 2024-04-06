@@ -5,7 +5,7 @@ dependencies:
     specifier: ^5.0.2
     version: 5.0.2(@adonisjs/core@6.5.0)
   '@adonisjs/auth':
-    specifier: ^9.1.1
+    specifier: ^9.2.0
     version: 9.2.0(@adonisjs/assembler@7.4.0)(@adonisjs/core@6.5.0)(@adonisjs/lucid@20.5.1)(@adonisjs/session@7.3.0)(@japa/plugin-adonisjs@3.0.1)
   '@adonisjs/core':
     specifier: ^6.2.2
