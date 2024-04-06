@@ -1,30 +1,54 @@
-import { DateTime } from 'luxon'
-import hash from '@adonisjs/core/services/hash'
-import { compose } from '@adonisjs/core/helpers'
-import { BaseModel, column } from '@adonisjs/lucid/orm'
 import { withAuthFinder } from '@adonisjs/auth/mixins/lucid'
+import hash from '@adonisjs/core/services/hash'
+import { DateTime } from 'luxon'
+import { BaseModel, beforeCreate, column } from '@adonisjs/lucid/orm'
+import * as crypto from 'node:crypto'
+import { compose } from '@adonisjs/core/helpers'
 
 const AuthFinder = withAuthFinder(() => hash.use('scrypt'), {
-  uids: ['email'],
-  passwordColumnName: 'password',
+    uids: ['email'],
+    passwordColumnName: 'password',
 })
 
 export default class User extends compose(BaseModel, AuthFinder) {
-  @column({ isPrimary: true })
-  declare id: number
+    @beforeCreate()
+    static generateUuid(model: User) {
+        model.id = crypto.randomUUID()
+    }
 
-  @column()
-  declare fullName: string | null
+    @column({ isPrimary: true })
+    declare id: string
 
-  @column()
-  declare email: string
+    @column()
+    declare firstName: string | null
 
-  @column()
-  declare password: string
+    @column()
+    declare lastName: string | null
 
-  @column.dateTime({ autoCreate: true })
-  declare createdAt: DateTime
+    @column.date()
+    declare dateOfBirth: DateTime | null
 
-  @column.dateTime({ autoCreate: true, autoUpdate: true })
-  declare updatedAt: DateTime | null
+    @column()
+    declare balance: number
+
+    @column()
+    declare avatarUrl: string | null
+
+    @column()
+    declare email: string
+
+    @column()
+    declare password: string | null
+
+    @column()
+    declare oauthId: number | null
+
+    @column()
+    declare isAdmin: boolean
+
+    @column.dateTime({ autoCreate: true })
+    declare createdAt: DateTime
+
+    @column.dateTime({ autoCreate: true, autoUpdate: true })
+    declare updatedAt: DateTime
 }
