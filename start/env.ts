@@ -42,5 +42,13 @@ export default await Env.create(new URL('../', import.meta.url), {
   |----------------------------------------------------------
   */
   DISCORD_CLIENT_ID: Env.schema.string(),
-  DISCORD_CLIENT_SECRET: Env.schema.string()
+  DISCORD_CLIENT_SECRET: Env.schema.string(),
+
+  /*
+  |----------------------------------------------------------
+  | Variables for configuring the mail package
+  |----------------------------------------------------------
+  */
+  SMTP_HOST: Env.schema.string(),
+  SMTP_PORT: Env.schema.string()
 })
