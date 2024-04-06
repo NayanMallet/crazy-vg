@@ -6,8 +6,8 @@
         "strict": false,
 
         "jsx": "react",
-        "jsxFactory": "React.createElement",
-        "jsxFragmentFactory": "React.Fragment",
+        "jsxFactory": "Html.createElement",
+        "jsxFragmentFactory": "Html.Fragment",
         "plugins": [{ "name": "@kitajs/ts-html-plugin" }]
     }
 }

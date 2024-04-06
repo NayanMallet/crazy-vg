@@ -80,8 +80,8 @@ export default defineConfig({
     },
     metaFiles: [
         {
-            pattern: 'resources/views/**/*.tsx',
-            reloadServer: false,
+            pattern: 'ressources/views/**/*.tsx',
+            reloadServer: true,
         },
         {
             pattern: 'public/**',
