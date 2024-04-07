@@ -16,7 +16,7 @@ export default class extends BaseSchema {
             table.text('avatar_url', 'longtext').nullable()
             table.string('email', 255).notNullable().unique()
             table.string('password', 255).nullable()
-            table.integer('oauth_id').nullable()
+            table.string('oauth_id').nullable()
 
             table.boolean('is_admin').defaultTo(false)
 

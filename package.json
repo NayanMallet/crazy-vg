@@ -82,9 +82,5 @@
     "reflect-metadata": "^0.2.1",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7"
-  },
-  "eslintConfig": {
-    "extends": "@adonisjs/eslint-config/app"
-  },
-  "prettier": "@adonisjs/prettier-config"
+  }
 }
