@@ -1,5 +1,5 @@
 import { ListItem } from "#components/list_item";
-import User from "#models/user";
+import type User from "#models/user";
 
 type Props = {
     users: User[]
