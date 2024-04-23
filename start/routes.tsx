@@ -1,4 +1,6 @@
-import { Admin } from '#pages/admin'
+import { Dashboard } from '#pages/admin/dashboard'
+import { Users } from "#pages/admin/users";
+
 import { Home } from '#pages/home'
 import { Login } from "#pages/login";
 import router from '@adonisjs/core/services/router'
@@ -14,10 +16,17 @@ router.get('/', () => {
 
 router
     .get('/admin', async (ctx) => {
-        return <Admin loggedUser={ctx.auth.user!} />
+        return <Dashboard user={ctx.auth.user!} />
     })
     .use([middleware.auth(), middleware.admin()])
     .as('admin')
+
+router
+    .get('/admin/users', async (ctx) => {
+        return <Users user={ctx.auth.user!} />
+    })
+    .use([middleware.auth(), middleware.admin()])
+    .as('admin.users')
 
 
 /*
