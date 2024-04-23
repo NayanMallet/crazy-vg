@@ -1,4 +1,5 @@
 import User from "#models/user";
+import { document } from "postcss";
 
 type Props = {
     pageTitle?: string;
@@ -12,15 +13,15 @@ export function AdminHeader(props: Props = {}) {
     const toggleNavVisibility = () => {
         const nav = document.getElementById('admin-nav');
         if (nav) {
-            isNavVisible = !isNavVisible;
-            nav.style.display = isNavVisible ? 'flex' : 'none';
+            nav.style.display = nav.style.display === 'none' ? 'absolute' : 'none';
+
         }
     };
 
     return (
-        <main class="navbar bg-neutral flex w-full h-full flex-row items-center justify-between">
+        <main class="navbar bg-neutral flex w-full h-full flex-row items-center justify-between" x-data="{ toggleOn: false }">
             <div class="flex gap-2">
-                <label class="btn btn-circle swap swap-rotate md:hidden">
+                <label class="btn btn-circle swap swap-rotate md:hidden" x-on="toggleOn = true" >
                     {/* Hamburguer menu icon for mobile */}
                     <input type="checkbox" />
                     <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
@@ -37,7 +38,6 @@ export function AdminHeader(props: Props = {}) {
                 </label>
 
                 <div class="flex">
-                    {/* Peux tu faire en sorte que le titre s'adapte en fonction de la taille de l'écran */}
                     <h1 class="md:text-2xl font-bold text-xl">{pageTitle ?? `Hey ${loggedUser.firstName} !`}</h1>
                 </div>
             </div>
@@ -66,11 +66,6 @@ export function AdminHeader(props: Props = {}) {
                     </ul>
                 </div>
             </div>
-
-            {/* Affichage de la navigation sur les écrans plus larges */}
-            {/*<nav id="admin-nav" class="md:flex hidden w-full md:w-auto md:items-center md:justify-end">*/}
-            {/*    /!*{navigation}*!/*/}
-            {/*</nav>*/}
         </main>
 );
 }

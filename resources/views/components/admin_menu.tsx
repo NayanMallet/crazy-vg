@@ -15,7 +15,7 @@ export function AdminMenu(props: Props = {}) {
                 {/* Admin menu app icon */}
             </div>
 
-            <div class="flex w-full h-full flex-col items-center justify-start">
+            <div class="flex w-full h-full flex-col items-center justify-start gap-2">
                 <ul class="menu w-full rounded-box">
                     <li>
                         <a class="active">
