@@ -13,7 +13,7 @@ export function AdminLayout(props: LayoutProps) {
     return (
         <Layout title={title} children={
             <div class="flex w-full h-full">
-                <nav class="hidden md:flex w-1/5 h-full flex-col" id="admin-nav" x-show="toggleOn">
+                <nav class="hidden md:flex w-1/5 h-full flex-col">
                     {navigation}
                 </nav>
                 <div class="flex w-full md:w-4/5 h-full flex-col">
