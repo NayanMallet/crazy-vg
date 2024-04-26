@@ -8,7 +8,7 @@ export function LoginForm(props: Props = {}) {
     const { customMessage } = props;
 
     return (
-        <div class="card w-96 bg-neutral text-neutral-content">
+        <div class="card w-96 bg-base-100 shadow-xl">
             <div class="card-body items-center space-y-4">
                 <div class="flex-col w-full items-center text-center">
                     <h2 class="text-xl font-bold">Se connecter</h2>

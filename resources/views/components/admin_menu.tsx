@@ -37,9 +37,9 @@ export function AdminMenu(props: Props) {
             </div>
 
             <div class="flex items-start justify-start w-full">
-                <a class="btn btn-ghost w-full px-4 py-2 justify-start">
+                <a class="btn btn-ghost w-full px-4 py-2 justify-start" href={settingsUrl}>
                     <Cog />
-                    {{ settingsUrl }}
+                    Settings
                 </a>
             </div>
         </main>

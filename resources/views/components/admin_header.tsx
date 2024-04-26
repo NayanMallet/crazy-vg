@@ -14,7 +14,6 @@ export function AdminHeader(props: Props = {}) {
         const nav = document.getElementById('admin-nav');
         if (nav) {
             nav.style.display = nav.style.display === 'none' ? 'absolute' : 'none';
-
         }
     };
 
