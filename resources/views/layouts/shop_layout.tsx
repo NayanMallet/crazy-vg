@@ -19,7 +19,7 @@ export function ShopLayout(props: LayoutProps) {
                 <main class="flex w-full md:h-[90%] h-[88%]">
                     {main}
                 </main>
-                <footer class="flex md:h-[10%] h-[12%] w-full justify-center items-center">
+                <footer class="absolute bottom-[-100vh] text-black flex md:h-[5%] h-[12%] w-full justify-center items-center">
                     {footer}
                 </footer>
             </div>

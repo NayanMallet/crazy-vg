@@ -50,7 +50,7 @@ export function Products(props: Props) {
                 ></ShopMainMenu>
             }
             footer={
-                <div>
+                <div class="text-black">
                     Copyright © 2024 All rights reserved - CrazyVg
                 </div>
             }
