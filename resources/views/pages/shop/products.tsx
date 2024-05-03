@@ -1,6 +1,7 @@
-import { Home, User as UserIcon, Recipe, Wallet } from "#components/icons";
+// import { Home, User as UserIcon, Recipe, Wallet } from "#components/icons";
 import { ShopLayout } from "#layouts/shop_layout";
 import type User from "#models/user";
+import { ShopHeader } from "#components/shop_header";
 // import Product from "#models/product";
 
 interface Props {
@@ -11,38 +12,35 @@ interface Props {
 export function Products(props: Props) {
     // const { user, products } = props;
     const {user } = props;
-    const routes = [
-        {
-            name: "Products",
-            route: "/shop/products",
-            icon: Home, // edit this
-            active: true
-        },
-        {
-            name: "ProductPage",
-            route: "/shop/product_page",
-            icon: UserIcon // edit this
-        },
-        {
-            name: "Cart",
-            route: "/shop/cart",
-            icon: Recipe // edit this
-        },
-        {
-            name: "User",
-            route: "/shop/user",
-            icon: Wallet // edit this
-        }
-    ];
+    // const routes = [
+    //     {
+    //         name: "Products",
+    //         route: "/shop/products",
+    //         icon: Home, // edit this
+    //         active: true
+    //     },
+    //     {
+    //         name: "ProductPage",
+    //         route: "/shop/product_page",
+    //         icon: UserIcon // edit this
+    //     },
+    //     {
+    //         name: "Cart",
+    //         route: "/shop/cart",
+    //         icon: Recipe // edit this
+    //     },
+    //     {
+    //         name: "User",
+    //         route: "/shop/user",
+    //         icon: Wallet // edit this
+    //     }
+    // ];
 
     return (
         <ShopLayout
             title={'Products'}
             navigation={
-            <div>
-                <h1 class="text-2xl font-bold">CrazyVg</h1>
-                <p>Hello {user.username}</p>
-            </div>
+            <ShopHeader pageTitle={"Hey " + user.firstName + " !"} loggedUser={user} />
             }
             main={
                 <div class="flex flex-col w-full h-full items-center space-y-4">
