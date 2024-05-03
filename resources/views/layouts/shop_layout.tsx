@@ -13,7 +13,7 @@ export function ShopLayout(props: LayoutProps) {
     return (
         <Layout title={title} children={
             <div class="flex w-full flex-col">
-                <nav class="flex md:h-[10%] h-[12%] w-full flex-col justify-center items-center">
+                <nav class="flex md:h-[10%] h-[12%] w-full flex-col justify-center items-center sticky top-0">
                     {navigation}
                 </nav>
                 <main class="flex w-full md:h-[90%] h-[88%]">
