@@ -21,10 +21,11 @@ export function ShopMainMenu(props: Props = {}) {
             <div class="w-screen h-screen" style={backgroundImageStyle}>
 
             </div>
-            <div class="w-full h-10">
-                <p class="w-full h-full flex bg-black color-white justify-center items-center">Catalogue</p>
+            <div class="w-full h-screen bg-white">
+                <p class="w-full h-20 text-3xl flex bg-black color-white justify-center items-center">Catalogue</p>
+                <div></div>
             </div>
-            <div class="w-full h-20"></div>
+
         </main>
     );
 }
