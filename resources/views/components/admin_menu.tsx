@@ -3,10 +3,10 @@ import { Cog } from "#components/icons";
 interface Props {
     settingsUrl: string;
     items: Array<{
-        name: string,
-        route: string,
-        icon?: Function,
-        active?: boolean
+    name: string,
+    route: string,
+    icon?: Function,
+    active?: boolean
     }>;
 }
 

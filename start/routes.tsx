@@ -5,8 +5,10 @@ import { Home } from '#pages/home'
 import { Login } from "#pages/login";
 import router from '@adonisjs/core/services/router'
 import { middleware } from '#start/kernel'
+import { Products } from "#pages/shop/products";
 
 const AuthController = () => import('#controllers/auth_controller')
+// const ProductsController = () => import('#controllers/products_controller')
 
 router.get('/', () => {
     return <Home />
@@ -27,6 +29,14 @@ router
     })
     .use([middleware.auth(), middleware.admin()])
     .as('admin.users')
+
+
+router
+    .get('/shop', async (ctx) => {
+        return <Products user={ctx.auth.user!} />
+    })
+    .use([middleware.auth(), middleware.admin()])
+    .as('shop')
 
 
 /*

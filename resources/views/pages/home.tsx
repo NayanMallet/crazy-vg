@@ -7,6 +7,9 @@ export function Home() {
             title={'Home Page'}
             children={
                 <div class="h-full flex justify-center items-center space-x-2">
+                    <a class="btn" href={route('shop')}>
+                        Accéder au shop
+                    </a>
                     <a class="btn btn-primary" href={route('auth.login')}>
                         Se connecter
                     </a>
