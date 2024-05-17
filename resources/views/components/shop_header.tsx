@@ -2,10 +2,11 @@ import User from "#models/user";
 
 type Props = {
     loggedUser: User;
+    userUrl: string;
 }
 
 export function ShopHeader(props: Props) {
-    const { loggedUser } = props;
+    const { loggedUser, userUrl } = props;
 
     return (
         <main class="navbar bg-transparent absolute top-0 flex w-full flex-row items-center justify-between" x-data="{ toggleOn: false }">
@@ -69,7 +70,7 @@ export function ShopHeader(props: Props) {
                     <ul tabindex="0"
                         class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-52">
                         <li>
-                            <a class="justify-between">
+                            <a class="justify-between" href={userUrl}>
                                 Profile
                             </a>
                         </li>

@@ -3,7 +3,6 @@ import { ShopLayout } from "#layouts/shop_layout";
 import type User from "#models/user";
 import { ShopHeader } from "#components/shop_header";
 import { ShopMainMenu } from "#components/shop_main_menu";
-import { UserMenu } from "#components/user_menu";
 // import Product from "#models/product";
 
 interface Props {
@@ -18,23 +17,23 @@ export function Products(props: Props) {
     //     {
     //         name: "Products",
     //         route: "/shop/products",
-    //         icon: Home, // edit this
+    //         // icon: Home, // edit this
     //         active: true
     //     },
-    //     {
-    //         name: "ProductPage",
-    //         route: "/shop/product_page",
-    //         icon: UserIcon // edit this
-    //     },
-    //     {
-    //         name: "Cart",
-    //         route: "/shop/cart",
-    //         icon: Recipe // edit this
-    //     },
+    //     // {
+    //     //     name: "ProductPage",
+    //     //     route: "/shop/product_page",
+    //     //     icon: UserIcon // edit this
+    //     // },
+    //     // {
+    //     //     name: "Cart",
+    //     //     route: "/shop/cart",
+    //     //     icon: Recipe // edit this
+    //     // },
     //     {
     //         name: "User",
     //         route: "/shop/user",
-    //         icon: Wallet // edit this
+    //         // icon: Profile // edit this
     //     }
     // ];
 
@@ -42,7 +41,7 @@ export function Products(props: Props) {
         <ShopLayout
             title={'Products'}
             navigation={
-            <ShopHeader loggedUser={user} />
+            <ShopHeader loggedUser={user} userUrl={"shop/profile"}/>
             }
             main={
                 <ShopMainMenu
@@ -57,20 +56,4 @@ export function Products(props: Props) {
             }
         />
     );
-    // return (
-    //     <ShopLayout
-    //         title={'Products'}
-    //         navigation={
-    //             <ShopHeader loggedUser={user} />
-    //         }
-    //         main={
-    //             <UserMenu loggedUser={user} />
-    //             }
-    //         footer={
-    //             <div class="text-black">
-    //                 Copyright © 2024 All rights reserved - CrazyVg
-    //             </div>
-    //         }
-    //     />
-    // );
 }

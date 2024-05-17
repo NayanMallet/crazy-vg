@@ -1,5 +1,6 @@
 import { Dashboard } from '#pages/admin/dashboard'
 import { Users } from "#pages/admin/users";
+import { Profile } from "#pages/shop/profile";
 
 import { Home } from '#pages/home'
 import { Login } from "#pages/login";
@@ -37,6 +38,13 @@ router
     })
     .use([middleware.auth(), middleware.admin()])
     .as('shop')
+
+router
+    .get('/shop/profile', async (ctx) => {
+        return <Profile user={ctx.auth.user!} />
+    })
+    .use([middleware.auth(), middleware.admin()])
+    .as('shop.profile')
 
 
 /*
