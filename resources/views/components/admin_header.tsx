@@ -18,7 +18,7 @@ export function AdminHeader(props: Props = {}) {
     };
 
     return (
-        <main class="navbar bg-neutral flex w-full h-full flex-row items-center justify-between" x-data="{ toggleOn: false }">
+        <main class="navbar sticky bg-neutral flex w-full h-full flex-row items-center justify-between" x-data="{ toggleOn: false }">
             <div class="flex gap-2">
                 <label class="btn btn-circle swap swap-rotate md:hidden" x-on="toggleOn = true" >
                     {/* Hamburguer menu icon for mobile */}

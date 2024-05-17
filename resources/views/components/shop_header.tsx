@@ -8,7 +8,7 @@ export function ShopHeader(props: Props) {
     const { loggedUser } = props;
 
     return (
-        <main class="navbar bg-transparent absolute top-0 flex w-full h-full flex-row items-center justify-between" x-data="{ toggleOn: false }">
+        <main class="navbar bg-transparent absolute top-0 flex w-full flex-row items-center justify-between" x-data="{ toggleOn: false }">
 
             <div class="flex gap-2">
                 <label class="btn btn-circle swap swap-rotate" x-on="toggleOn = true" >
