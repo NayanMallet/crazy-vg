@@ -3,6 +3,7 @@ import { ShopLayout } from "#layouts/shop_layout";
 import type User from "#models/user";
 import { ShopHeader } from "#components/shop_header";
 import { ShopMainMenu } from "#components/shop_main_menu";
+import { UserMenu } from "#components/user_menu";
 // import Product from "#models/product";
 
 interface Props {
@@ -56,4 +57,20 @@ export function Products(props: Props) {
             }
         />
     );
+    // return (
+    //     <ShopLayout
+    //         title={'Products'}
+    //         navigation={
+    //             <ShopHeader loggedUser={user} />
+    //         }
+    //         main={
+    //             <UserMenu loggedUser={user} />
+    //             }
+    //         footer={
+    //             <div class="text-black">
+    //                 Copyright © 2024 All rights reserved - CrazyVg
+    //             </div>
+    //         }
+    //     />
+    // );
 }

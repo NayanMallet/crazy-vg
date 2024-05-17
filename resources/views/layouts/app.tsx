@@ -22,7 +22,7 @@ export function Layout(props: LayoutProps) {
                 <Vite.Entrypoint entrypoints={["resources/assets/css/index.css"]} />
                 <script src="//unpkg.com/alpinejs" defer></script>
             </head>
-            <body class="v-full h-full">{children}</body>
+            <body class="w-full h-full">{children}</body>
             </html>
         </>
     );

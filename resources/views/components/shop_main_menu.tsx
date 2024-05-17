@@ -9,15 +9,15 @@ type Props = {
 
 export function ShopMainMenu(props: Props = {}) {
     const { products, bgImage } = props;
-    
+
     const backgroundImageStyle = bgImage ?{
         backgroundImage: 'url("' + props.bgImage + '")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
     } : {};
-    
+
     return (
-        <main class="flex flex-col items-center jusitfy-center w-full !overflow-y-scroll">
+        <main class="flex flex-col items-center jusitfy-center w-full h-fit !overflow-y-scroll">
             <div class="w-screen h-screen" style={backgroundImageStyle}>
 
             </div>
