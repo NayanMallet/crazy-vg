@@ -18,7 +18,7 @@ export function Profile(props: Props) {
         <ShopLayout
             title={'Profile'}
             navigation={
-                <ShopHeader loggedUser={user} userUrl={"zob/zob"} />
+                <ShopHeader loggedUser={user} userUrl={"shop/profile"} />
             }
             main={
                 <UserMenu loggedUser={user} />
