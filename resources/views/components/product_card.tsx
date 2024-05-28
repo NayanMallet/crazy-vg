@@ -16,7 +16,7 @@ export function ProductCard(props: Props) {
             </figure>
             <div class="card-body">
                 <h2 class="card-title">
-                    <a class="hover:underline cursor-pointer" href={"/shop/product/" + product.id}>
+                    <a class="hover:underline cursor-pointer" href={`/shop/product/${product.id}`}>
                         {product.name}
                     </a>
                     <div class="badge badge-secondary">NEW</div>
