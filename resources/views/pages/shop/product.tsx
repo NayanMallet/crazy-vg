@@ -3,6 +3,7 @@ import { ShopLayout } from "#layouts/shop_layout";
 import type User from "#models/user";
 import { ShopHeader } from "#components/shop_header";
 import Product from "#models/product";
+import { ProductCard } from "#components/product_card";
 
 interface Props {
     user: User,
@@ -10,16 +11,17 @@ interface Props {
 }
 
 export function ProductPage(props: Props) {
-    // const { user, products } = props;
     const { user, product } = props;
 
     return (
         <ShopLayout
             title={ product.name }
             navigation={
-                <ShopHeader loggedUser={user} userUrl={"zob/zob"} />
+                <ShopHeader loggedUser={user} userUrl={"shop/profile"} />
             }
-            main={}
+            main={
+            <ProductCard product={product} />
+        }
             footer={
                 <div class="text-black">
                     Copyright © 2024 All rights reserved - CrazyVg
