@@ -153,7 +153,7 @@ export function Products(props: Props) {
                 ></ShopMainMenu>
             }
             footer={
-                <div class="text-black absolute bottom-[-99vh]">
+                <div class="text-center text-sm">
                     Copyright © 2024 All rights reserved - CrazyVg
                 </div>
             }

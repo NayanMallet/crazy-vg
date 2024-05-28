@@ -10,7 +10,7 @@ export function ProductCard(props: Props) {
     const { product } = props;
 
     return (
-        <div class="card w-96 bg-base-100 shadow-xl mt-4">
+        <div class="card w-96 bg-base-100 shadow-xl mt-4 mb-1">
             <figure class="h-64 overflow-hidden">
                 <img src={product.thumbnailUrl} alt={product.name} class="object-cover w-full h-full" />
             </figure>
