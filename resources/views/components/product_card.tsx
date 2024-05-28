@@ -19,7 +19,7 @@ export function ProductCard(props: Props) {
                 <img src={product.thumbnailUrl} alt={product.name} class="object-cover w-full h-full" />
             </figure>
             <div class="card-body">
-                <h2 class="card-title">
+                <h2 class="card-title inline-block hover:underline cursor-pointer">
                     {product.name}
                     <div class="badge badge-secondary">NEW</div>
                 </h2>
@@ -30,5 +30,6 @@ export function ProductCard(props: Props) {
                 </div>
             </div>
         </div>
+
     );
 }
