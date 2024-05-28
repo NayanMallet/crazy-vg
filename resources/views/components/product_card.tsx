@@ -19,8 +19,10 @@ export function ProductCard(props: Props) {
                 <img src={product.thumbnailUrl} alt={product.name} class="object-cover w-full h-full" />
             </figure>
             <div class="card-body">
-                <h2 class="card-title inline-block hover:underline cursor-pointer">
-                    {product.name}
+                <h2 class="card-title">
+                    <a class="hover:underline cursor-pointer" href={"/products/" + product.id}>
+                        {product.name}
+                    </a>
                     <div class="badge badge-secondary">NEW</div>
                 </h2>
                 <p>{product.description}</p>
