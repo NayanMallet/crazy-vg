@@ -24,7 +24,7 @@ export function ProductCard(props: Props) {
                     <div class="badge badge-secondary">NEW</div>
                 </h2>
                 <p>{product.description}</p>
-                <div class="card-actions justify-between">
+                <div class="card-actions justify-between items-center">
                     <Rating product={product} />
                     <span class="badge badge-secondary">Price: ${product.price}</span>
                 </div>
