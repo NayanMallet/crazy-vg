@@ -1,6 +1,7 @@
 import { Dashboard } from '#pages/admin/dashboard'
 import { Users } from "#pages/admin/users";
 import { Profile } from "#pages/shop/profile";
+import { AdminProducts } from "#pages/admin/admin_products";
 
 import { Home } from '#pages/home'
 import { Login } from "#pages/login";
@@ -34,7 +35,7 @@ router
 
 router
     .get('/admin/products', async (ctx) => {
-        return <Products user={ctx.auth.user!} />
+        return <AdminProducts user={ctx.auth.user!} />
     })
     .use([middleware.auth(), middleware.admin()])
     .as('admin.products')
