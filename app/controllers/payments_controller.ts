@@ -1,8 +1,9 @@
 import { HttpContext } from '@adonisjs/core/http'
 import Stripe from 'stripe'
-import env from "#start/env";
+import env from '#start/env'
 
-const stripe = new Stripe(env.STRIPE_SECRET_KEY, {
+
+const stripe = new Stripe(env.get('STRIPE_SECRET_KEY'), {
     apiVersion: '2022-11-15', // Version de l'API Stripe
 })
 
