@@ -32,6 +32,13 @@ router
     .use([middleware.auth(), middleware.admin()])
     .as('admin.users')
 
+router
+    .get('/admin/products', async (ctx) => {
+        return <Products user={ctx.auth.user!} />
+    })
+    .use([middleware.auth(), middleware.admin()])
+    .as('admin.products')
+
 
 router
     .get('/shop', async (ctx) => {
