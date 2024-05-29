@@ -17,7 +17,7 @@ export function ProductPage(props: Props) {
         <ShopLayout
             title={ product.name }
             navigation={
-                <ShopHeader loggedUser={user} userUrl={"shop/profile"} />
+                <ShopHeader loggedUser={user} userUrl={"shop/profile"} isAbsolute={true}/>
             }
             main={
             <ProductCard product={product} />

@@ -3,13 +3,14 @@ import User from "#models/user";
 type Props = {
     loggedUser: User;
     userUrl: string;
+    isAbsolute?: boolean;
 }
 
 export function ShopHeader(props: Props) {
-    const { loggedUser, userUrl } = props;
+    const { loggedUser, userUrl, isAbsolute } = props;
 
     return (
-        <main class="navbar bg-transparent absolute top-0 flex w-full flex-row items-center justify-between" x-data="{ toggleOn: false }">
+        <main class={"navbar bg-transparent top-0 flex w-full flex-row items-center justify-between" + isAbsolute ? "absolute" : ""} x-data="{ toggleOn: false }">
 
             <div class="flex gap-2">
                 <label class="btn btn-circle swap swap-rotate" x-on="toggleOn = true" >

@@ -47,6 +47,7 @@ router
     .use([middleware.auth(), middleware.admin()])
     .as('shop.profile')
 
+//faux product
 let product = {
     id: '1',
     name: 'FIFA 22',
