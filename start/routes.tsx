@@ -12,6 +12,9 @@ import { ProductPage } from "#pages/shop/product";
 const AuthController = () => import('#controllers/auth_controller')
 // const ProductsController = () => import('#controllers/products_controller')
 
+const PaymentsController = () => import('#controllers/payments_controller')
+
+
 router.get('/', () => {
     return <Home />
 })
@@ -84,3 +87,15 @@ router
         router.get('/logout', [AuthController, 'logout']).as('auth.logout')
     })
     .prefix('/auth')
+
+/*
+|--------------------------------------------------------------------------
+| Stripe Payments Intent
+|--------------------------------------------------------------------------
+ */
+router
+    .post('/payments/create-payment-intent', async (ctx) => {
+        const controller = await PaymentsController()
+        return controller.createPaymentIntent(ctx)
+    })
+    .as('payments.createPaymentIntent')
