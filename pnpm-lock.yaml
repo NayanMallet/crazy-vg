@@ -24,7 +24,7 @@ dependencies:
     specifier: ^7.1.1
     version: 7.3.0(@adonisjs/core@6.5.0)(edge.js@6.0.2)
   '@adonisjs/shield':
-    specifier: ^8.1.0
+    specifier: ^8.1.1
     version: 8.1.1(@adonisjs/core@6.5.0)(@adonisjs/session@7.3.0)(edge.js@6.0.2)
   '@adonisjs/static':
     specifier: ^1.1.1

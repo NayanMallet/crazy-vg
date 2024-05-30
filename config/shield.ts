@@ -15,11 +15,22 @@ const shieldConfig = defineConfig({
    * Configure CSRF protection options. Refer documentation
    * to learn more
    */
+  // csrf: {
+  //   enabled: true,
+  //   exceptRoutes: [],
+  //   enableXsrfCookie: false,
+  //   methods: ['POST', 'PUT', 'PATCH', 'DELETE'],
+  // },
+
   csrf: {
-    enabled: true,
-    exceptRoutes: [],
-    enableXsrfCookie: false,
-    methods: ['POST', 'PUT', 'PATCH', 'DELETE'],
+      enabled: false,
+      methods: ['POST', 'PUT', 'DELETE'],
+      cookieOptions: {
+          httpOnly: false,
+          sameSite: true,
+          path: '/',
+          maxAge: 7200
+      }
   },
 
   /**

@@ -66,7 +66,7 @@
     "@adonisjs/lucid": "^20.1.0",
     "@adonisjs/mail": "^9.2.1",
     "@adonisjs/session": "^7.1.1",
-    "@adonisjs/shield": "^8.1.0",
+    "@adonisjs/shield": "^8.1.1",
     "@adonisjs/static": "^1.1.1",
     "@adonisjs/vite": "^2.0.2",
     "@kitajs/html": "^4.1.0",
