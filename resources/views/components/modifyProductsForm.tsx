@@ -1,12 +1,10 @@
-
-
 export function AddProductForm() {
     // const { product } = props;
 
     return (
         <div>
-            <button class="btn btn-primary" onclick="document.getElementById('my_modal_3').showModal()">Add Product</button>
-            <dialog id="my_modal_3" class="modal">
+            <button class="btn btn-primary" onclick="document.getElementById('my_modal_4').showModal()"></button>
+            <dialog id="my_modal_4" class="modal">
                 <div class="modal-box w-11/12 max-w-5xl">
                     <h3 class="font-bold text-lg">Add a new Product</h3>
                     <form action="/products/create" method="POST" enctype="multipart/form-data">
@@ -29,13 +27,11 @@ export function AddProductForm() {
                         </div>
                         <div>
                             <label for="average_rating">Average Rating</label>
-                            <input type="number" name="average_rating" id="average_rating" class="form-control"
-                                   required />
+                            <input type="number" name="average_rating" id="average_rating" class="form-control" required />
                         </div>
                         <div>
                             <label for="activation_code">Activation Code</label>
-                            <input type="text" name="activation_code" id="activation_code" class="form-control"
-                                   required />
+                            <input type="text" name="activation_code" id="activation_code" class="form-control" required />
                         </div>
                         <button type="submit" class="btn btn-primary">Add</button>
                     </form>

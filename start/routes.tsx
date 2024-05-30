@@ -98,14 +98,15 @@ router
 
 router
     .get('/products/delete/:id', async ({request, response}) => {
-        const product = await
-            Product.find(request.param('id'))
+        const product = await Product.find(request.param('id'))
         if (!product) {
             return 'Product not found'
         }
         await product.delete()
         return response.redirect('/admin/products')
     })
+
+// delete product
 
 // create user
 router
