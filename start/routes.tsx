@@ -12,7 +12,6 @@ import { ProductPage } from "#pages/shop/product";
 const AuthController = () => import('#controllers/auth_controller')
 // const ProductsController = () => import('#controllers/products_controller')
 // import { ProductsController } from '#controllers/products_controller';
-const ShopController = () => import('#controllers/shop_controller')
 
 
 router.get('/', () => {
@@ -92,12 +91,15 @@ router
 |--------------------------------------------------------------------------
 | Stripe Payments Intent
 |--------------------------------------------------------------------------
- */
+*/
+import StripeController from '#controllers/stripe_controller';
 
-router
-    .get('/shop/initiate-payment', [ShopController, 'initiatePayment'])
-    .use([middleware.auth(), middleware.admin()])
-    .as('shop.initiatePayment');
+router.post('/payments/create-payment-intent', async ({ request, response }) => {
+    const productId = request.input('productId');
+    const stripeController = new StripeController();
+    const clientSecret = await stripeController.createPaymentIntent(productId);
+    return response.json({ clientSecret });
+});
 
 
 
