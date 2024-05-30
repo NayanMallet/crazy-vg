@@ -8,19 +8,12 @@ type Props = {
 
 export function AdminHeader(props: Props = {}) {
     const { pageTitle, loggedUser } = props;
-    let isNavVisible = false;
 
-    const toggleNavVisibility = () => {
-        const nav = document.getElementById('admin-nav');
-        if (nav) {
-            nav.style.display = nav.style.display === 'none' ? 'absolute' : 'none';
-        }
-    };
 
     return (
-        <main class="navbar sticky bg-neutral flex w-full h-full flex-row items-center justify-between" x-data="{ toggleOn: false }">
+        <main class="navbar sticky bg-neutral flex w-full h-full flex-row items-center justify-between">
             <div class="flex gap-2">
-                <label class="btn btn-circle swap swap-rotate md:hidden" x-on="toggleOn = true" >
+                <label class="btn btn-circle swap swap-rotate md:hidden">
                     {/* Hamburguer menu icon for mobile */}
                     <input type="checkbox" />
                     <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"

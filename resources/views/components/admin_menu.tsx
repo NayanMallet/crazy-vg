@@ -18,7 +18,8 @@ export function AdminMenu(props: Props) {
     return (
         <main class="flex w-full h-full flex-col items-center justify-between bg-base-200">
             <div class="flex flex-row items-center justify-center h-1/6 w-full">
-                {/* Admin menu app icon */}
+                <img src="/images/[LOGO]crazy_vg.webp" alt="logo" class="w-auto h-full" />
+
             </div>
 
             <div class="flex w-full h-full flex-col items-center justify-start">
