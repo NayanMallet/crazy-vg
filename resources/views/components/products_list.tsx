@@ -14,7 +14,7 @@ export function ProductsList(props: Props) {
     const { products } = props;
 
     return (
-        <div>
+        <div class="p-5">
             <AddProductForm product={products[0]} />
             <div class="overflow-x-auto">
                 <table class="table">
@@ -80,7 +80,7 @@ export function ProductsList(props: Props) {
                                                     
                                                 </form>
                                                 <div class="modal-action">
-                                                    <form action={`/products/delete/${product.id}`} method="POST">
+                                                    <form action={`/products/delete/${product.id}`} method="POST" enctype="multipart/form-data">
                                                         <button type="submit" class="btn btn-danger">Delete</button>
                                                     </form>
                                                     <form method="dialog">
