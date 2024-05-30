@@ -76,7 +76,9 @@ export function ShopHeader(props: Props) {
                                 Profile
                             </a>
                         </li>
-                        <li><a>Logout</a></li>
+                        <li>
+                            <a href="/logout">Logout</a>
+                        </li>
                     </ul>
                 </div>
             </div>

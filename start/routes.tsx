@@ -85,9 +85,10 @@ router
     .group(() => {
         router.get('/:provider', [AuthController, 'redirect']).as('auth.social')
         router.get('/:provider/callback', [AuthController, 'callback']).as('auth.callback')
-        router.get('/logout', [AuthController, 'logout']).as('auth.logout')
     })
-    .prefix('/auth')
+    .prefix('/auth/social')
+
+    router.get('/logout', [AuthController, 'logout']).as('auth.logout')
 
 /*
 |--------------------------------------------------------------------------
