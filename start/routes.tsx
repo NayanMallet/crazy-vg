@@ -9,7 +9,9 @@ import router from '@adonisjs/core/services/router'
 import { middleware } from '#start/kernel'
 import { Products } from "#pages/shop/products";
 import { ProductPage } from "#pages/shop/product";
+
 import User from "#models/user";
+
 import { ConfirmPage } from "#pages/shop/confirm_page";
 
 const AuthController = () => import('#controllers/auth_controller')
@@ -164,7 +166,6 @@ router
 */
 import StripeController from '#controllers/stripe_controller';
 import Product from "#models/product";
-import User from "#models/user";
 import { DateTime } from "luxon";
 
 router.get('/payments/create-payment-intent/:productId', [StripeController, 'createPaymentIntent'])
