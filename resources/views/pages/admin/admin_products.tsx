@@ -20,7 +20,7 @@ export async function AdminProducts(props: Props) {
     const routes = [
         {
             name: "Dashboard",
-            route: "/admin/dashboard",
+            route: "/admin",
             icon: Home,
         },
         {
