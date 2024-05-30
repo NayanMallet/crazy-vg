@@ -1,6 +1,7 @@
 import { Dashboard } from '#pages/admin/dashboard'
 import { Users } from "#pages/admin/users";
 import { Profile } from "#pages/shop/profile";
+import { AdminProducts } from "#pages/admin/admin_products";
 
 import { Home } from '#pages/home'
 import { Login } from "#pages/login";
@@ -10,14 +11,17 @@ import { Products } from "#pages/shop/products";
 import { ProductPage } from "#pages/shop/product";
 
 const AuthController = () => import('#controllers/auth_controller')
-// const ProductsController = () => import('#controllers/products_controller')
-// import { ProductsController } from '#controllers/products_controller';
 
+const ProductsController = () => import('#controllers/products_controller')
 
 router.get('/', () => {
     return <Home />
 })
 
+
+router.get('/products/create', [ProductsController, 'create']).as('products.create')
+
+router.post('/products', [ProductsController, 'store']).as('products.store')
 
 
 router
@@ -33,6 +37,13 @@ router
     })
     .use([middleware.auth(), middleware.admin()])
     .as('admin.users')
+
+router
+    .get('/admin/products', async (ctx) => {
+        return <AdminProducts user={ctx.auth.user!} />
+    })
+    .use([middleware.auth(), middleware.admin()])
+    .as('admin.products')
 
 
 router
