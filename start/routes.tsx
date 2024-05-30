@@ -77,17 +77,31 @@ router
         return response.redirect('/admin/products')
     })
 
+// update product
+router
+    .post('/products/update/:id', async ({request, response}) => {
+        const data = request.only(['name', 'description', 'price', 'thumbnail_url', 'average_rating', 'activation_code']);
+        const product = await Product.find(request.param('id'))
+        if (!product) {
+            return 'Product not found'
+        }
+        product.merge(data)
+        await product.save()
+        return response.redirect('/admin/products')
+    })
 
-// router.post('login', async ({ request }) => {
-//     const credentials = request.only(['email', 'password'])
-//
-//     console.log(credentials)
-// })
-//
-//
-// router.get('/products/create', [ProductsController, 'create']).as('products.create')
-//
-// router.post('/products', [ProductsController, 'store']).as('products.store')
+// delete product
+
+router
+    .get('/products/delete/:id', async ({request, response}) => {
+        const product = await
+            Product.find(request.param('id'))
+        if (!product) {
+            return 'Product not found'
+        }
+        await product.delete()
+        return response.redirect('/admin/products')
+    })
 
 /*
 |--------------------------------------------------------------------------
