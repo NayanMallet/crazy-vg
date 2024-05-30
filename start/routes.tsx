@@ -86,7 +86,7 @@ router
         router.get('/:provider', [AuthController, 'redirect']).as('auth.social')
         router.get('/:provider/callback', [AuthController, 'callback']).as('auth.callback')
     })
-    .prefix('/auth/social')
+    .prefix('/auth')
 
     router.get('/logout', [AuthController, 'logout']).as('auth.logout')
 
