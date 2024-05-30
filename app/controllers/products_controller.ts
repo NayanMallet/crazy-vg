@@ -1,4 +1,5 @@
 import type { HttpContext } from '@adonisjs/core/http'
+import Product from '#models/product'
 
 export default class ProductsController {
   /**
@@ -9,12 +10,18 @@ export default class ProductsController {
   /**
    * Display form to create a new record
    */
-  async create({}: HttpContext) {}
+  public async create({ view }: HttpContext) {
+    return view.render('products.create')
+  }
 
   /**
    * Handle form submission for the create action
    */
-  async store({ request }: HttpContext) {}
+  public async store({ request, response }: HttpContext) {
+    const data = request.only(['name', 'description', 'price', 'thumbnailUrl', 'averageRating', 'activationCode'])
+    const product = await Product.create(data)
+    return response.redirect('/products')
+  }
 
   /**
    * Show individual record
@@ -29,7 +36,7 @@ export default class ProductsController {
   /**
    * Handle form submission for the edit action
    */
-  async update({ params, request }: HttpContext) {}
+  /* async update({ params, request }: HttpContext) {} */
 
   /**
    * Delete record

@@ -11,13 +11,18 @@ import { Products } from "#pages/shop/products";
 import { ProductPage } from "#pages/shop/product";
 
 const AuthController = () => import('#controllers/auth_controller')
-// const ProductsController = () => import('#controllers/products_controller')
+
+const ProductsController = () => import('#controllers/products_controller')
 
 router.get('/', () => {
     return <Home />
 })
 
 
+router.get('/products/create', [ProductsController, 'create']).as('products.create')
+
+router.post('/products', [ProductsController, 'store']).as('products.store')
+    
 
 router
     .get('/admin', async (ctx) => {
