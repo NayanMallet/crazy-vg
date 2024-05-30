@@ -9,6 +9,7 @@ import router from '@adonisjs/core/services/router'
 import { middleware } from '#start/kernel'
 import { Products } from "#pages/shop/products";
 import { ProductPage } from "#pages/shop/product";
+import { ConfirmPage } from "#pages/shop/confirm_page";
 
 const AuthController = () => import('#controllers/auth_controller')
 
@@ -100,11 +101,11 @@ router.get('/payments/create-payment-intent/:productId', [StripeController, 'cre
     .use(middleware.auth())
 
 
-router.get('/code/:productId', async ({ request }) => {
+router.get('/code/:productId', async ({ request, auth }) => {
     const product = await Product.find(request.param('productId'))
     if (!product) {
         return 'Product not found'
     }
-    return product.activationCode;
+    return <ConfirmPage product={product} user={auth.user!} />
 })
 
