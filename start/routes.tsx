@@ -9,6 +9,7 @@ import router from '@adonisjs/core/services/router'
 import { middleware } from '#start/kernel'
 import { Products } from "#pages/shop/products";
 import { ProductPage } from "#pages/shop/product";
+import User from "#models/user";
 
 const AuthController = () => import('#controllers/auth_controller')
 
@@ -103,6 +104,40 @@ router
         return response.redirect('/admin/products')
     })
 
+// create user
+router
+    .post('/users/create', async ({request, response}) => {
+        const data = request.only(['email', 'password']);
+        const user = await User.create(data)
+        return response.redirect('/')
+    })
+
+// update user
+router
+    .post('/users/update/:id', async ({request, response}) => {
+        const data = request.only(['first_name', 'last_name', 'email', 'password', 'is_admin']);
+        const user = await User.find(request.param('id'))
+        if (!user) {
+            return 'User not found'
+        }
+        user.merge(data)
+        user.updatedAt = DateTime.now();
+        await user.save()
+        return response.redirect('/admin/users')
+    })
+
+// delete user
+
+router
+    .get('/users/delete/:id', async ({request, response}) => {
+        const user = await
+            User.find(request.param('id'))
+        if (!user) {
+            return 'User not found'
+        }
+        await user.delete()
+        return response.redirect('/admin/users')
+    })
 /*
 |--------------------------------------------------------------------------
 | Authentification & Social OAuth
@@ -127,6 +162,8 @@ router
 */
 import StripeController from '#controllers/stripe_controller';
 import Product from "#models/product";
+import User from "#models/user";
+import { DateTime } from "luxon";
 
 router.get('/payments/create-payment-intent/:productId', [StripeController, 'createPaymentIntent'])
     .use(middleware.auth())
