@@ -9,12 +9,11 @@ import { Home, User as UserIcon, Recipe, Wallet } from "#components/icons";
 
 
 interface Props {
-    product: Product,
     user: User
 }
 
 export async function AdminProducts(props: Props) {
-    const { product, user } = props;
+    const { user } = props;
     const products = await Product.all(); // Récupérer tous les produits
 
     const routes = [
