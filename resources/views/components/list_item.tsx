@@ -1,6 +1,7 @@
 import { Children } from "@kitajs/html";
 
 type Props = {
+    id?: string,
     checkbox?: boolean,
     thumbnailUrl?: string,
     name: string,
@@ -19,7 +20,7 @@ export function ListItem(props: Props) {
                     <label>
                         <input type="checkbox" class="checkbox" />
                     </label>
-                ) : ''}
+                ) : <span>{props.id}</span>}
             </th>
 
             <td>
@@ -28,7 +29,7 @@ export function ListItem(props: Props) {
                         <div class="avatar">
                             <div class="mask mask-squircle w-12 h-12">
                                 <img src={props.thumbnailUrl}
-                                     alt={props.name} />
+                                    alt={props.name} />
                             </div>
                         </div>
                     )}

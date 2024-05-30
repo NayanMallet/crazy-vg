@@ -14,7 +14,7 @@ export function ProductsList(props: Props) {
             <table class="table">
                 <thead>
                 <tr>
-                    <th></th>
+                    <th>Id</th>
                     <th class="text-center">Nom</th>
                     <th>Price</th>
                     <th>Rating</th>
@@ -26,6 +26,7 @@ export function ProductsList(props: Props) {
                 <tbody>
                 {products.map((product) => (
                     <ListItem
+                        id={product.id}
                         checkbox={false}
                         name={product.name}
                         property={product.price.toString()}
