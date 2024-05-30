@@ -38,12 +38,9 @@ dependencies:
   '@kitajs/ts-html-plugin':
     specifier: ^4.0.1
     version: 4.0.1(@kitajs/html@4.1.0)(typescript@5.4.4)
-  '@stripe/react-stripe-js':
-    specifier: ^2.7.1
-    version: 2.7.1(@stripe/stripe-js@3.4.1)(react-dom@18.3.1)(react@18.3.1)
-  '@stripe/stripe-js':
-    specifier: ^3.4.1
-    version: 3.4.1
+  '@mezielabs/adonis-stripe':
+    specifier: ^1.0.7
+    version: 1.0.7(stripe@15.8.0)
   '@vinejs/vine':
     specifier: ^1.7.1
     version: 1.8.0
@@ -1138,6 +1135,14 @@ packages:
     resolution: {integrity: sha512-9I2Zn6+NJLfaGoz9jN3lpwDgAYvfGeNYdbAIjJOqzs4Tpc+VU3Jqq4IofSUBKajiDS8k9fZIg18/z13mpk1bsA==}
     engines: {node: '>=8'}
 
+  /@mezielabs/adonis-stripe@1.0.7(stripe@15.8.0):
+    resolution: {integrity: sha512-gYt+mPRycX6gZNvimsNl0bk6zWJEXR9NlaTU38ql6/dN6/K7v5gcS9xdBazb/744xCBgl6RRAK4YmUFwj8BOhA==}
+    peerDependencies:
+      stripe: ^12.2.0
+    dependencies:
+      stripe: 15.8.0
+    dev: false
+
   /@noble/hashes@1.4.0:
     resolution: {integrity: sha512-V1JJ1WTRUqHHrOSh597hURcMqVKVGL/ea3kv0gSnEdsEZ0/+VyPghM1lMNGc00z7CIQorSvbKpuJkxvuHbvdbg==}
     engines: {node: '>= 16'}
@@ -1394,24 +1399,6 @@ packages:
   /@sindresorhus/is@6.3.1:
     resolution: {integrity: sha512-FX4MfcifwJyFOI2lPoX7PQxCqx8BG1HCho7WdiXwpEQx1Ycij0JxkfYtGK7yqNScrZGSlt6RE6sw8QYoH7eKnQ==}
     engines: {node: '>=16'}
-
-  /@stripe/react-stripe-js@2.7.1(@stripe/stripe-js@3.4.1)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-/i13alp27HaSBbMM6kW0jhy8KqdtOL1T/EcRjFjfhvt+CBtMEg8TD7y28W3oZG0+OBDdCyGGnXgNgrKPYQH40g==}
-    peerDependencies:
-      '@stripe/stripe-js': ^1.44.1 || ^2.0.0 || ^3.0.0
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@stripe/stripe-js': 3.4.1
-      prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-    dev: false
-
-  /@stripe/stripe-js@3.4.1:
-    resolution: {integrity: sha512-6vFTA7+MzoQyhZDn/D3wWZrUE8M8OSUFJE2Y3O1okfBWr4eCLvMeSoZuYN2xb1KJ3J0bBw96YfKxY75M/H0JZw==}
-    engines: {node: '>=12.16'}
-    dev: false
 
   /@swc/core-darwin-arm64@1.4.12:
     resolution: {integrity: sha512-BZUUq91LGJsLI2BQrhYL3yARkcdN4TS3YGNS6aRYUtyeWrGCTKHL90erF2BMU2rEwZLLkOC/U899R4o4oiSHfA==}
@@ -4506,14 +4493,6 @@ packages:
     resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
     engines: {node: '>= 0.6.0'}
 
-  /prop-types@15.8.1:
-    resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
-    dependencies:
-      loose-envify: 1.4.0
-      object-assign: 4.1.1
-      react-is: 16.13.1
-    dev: false
-
   /property-information@6.5.0:
     resolution: {integrity: sha512-PgTgs/BlvHxOu8QuEN7wi5A0OmXaBcHpmCSTehcs6Uuu9IkDIEo13Hy7n898RHfrQ49vKCoGeWZSaAK01nwVig==}
 
@@ -4593,6 +4572,7 @@ packages:
 
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+    dev: true
 
   /react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
@@ -5074,7 +5054,7 @@ packages:
     engines: {node: '>=12.*'}
     dependencies:
       '@types/node': 20.12.4
-      qs: 6.12.0
+      qs: 6.12.1
     dev: false
 
   /strtok3@7.0.0:
