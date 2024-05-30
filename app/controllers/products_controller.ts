@@ -23,23 +23,42 @@ export default class ProductsController {
     return response.redirect('/products')
   }
 
-  /**
-   * Show individual record
-   */
-  async show({ params }: HttpContext) {}
 
   /**
    * Edit individual record
    */
-  async edit({ params }: HttpContext) {}
+  async edit({ params, view }: HttpContext) {
+    const product = await Product.find(params.id)
+    return view.render('products.edit', { product })
+
+  }
 
   /**
    * Handle form submission for the edit action
    */
-  /* async update({ params, request }: HttpContext) {} */
+
+  async update({ params, request, response }: HttpContext) {
+    const product = await Product.find(params.id)
+    const data = request.only(['name', 'description', 'price', 'thumbnailUrl', 'averageRating', 'activationCode'])
+    if (!product) {
+        return response.notFound('Product not found')
+    }
+    product.merge(data)
+    await product.save()
+    return response.redirect('/products')
+    }
+
 
   /**
    * Delete record
    */
-  async destroy({ params }: HttpContext) {}
+  async destroy({ params, response }: HttpContext) {
+    const product = await Product.find(params.id)
+    if (!product) {
+        return response.notFound('Product not found')
+    }
+    await product.delete()
+    return response.redirect('/products')
+  }
+
 }
