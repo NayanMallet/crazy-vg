@@ -41,7 +41,7 @@ export function Products(props: Props) {
         <ShopLayout
             title={'Products'}
             navigation={
-            <ShopHeader loggedUser={user} userUrl={"shop/profile"}/>
+            <ShopHeader loggedUser={user} userUrl={"shop/profile"} isAbsolute={true}/>
             }
             main={
                 <ShopMainMenu
