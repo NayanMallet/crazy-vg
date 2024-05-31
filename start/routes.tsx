@@ -28,7 +28,8 @@ router.get('/', () => {
 
 router
     .get('/admin', async (ctx) => {
-        return <Dashboard user={ctx.auth.user!} />
+        // return <Dashboard user={ctx.auth.user!} />
+        return <Users user={ctx.auth.user!} />
     })
     .use([middleware.auth(), middleware.admin()])
     .as('admin')
@@ -97,14 +98,16 @@ router
 // delete product
 
 router
-    .get('/products/delete/:id', async ({request, response}) => {
-        const product = await Product.find(request.param('id'))
+    .delete('/products/delete/:id', async ({request, response}) => {
+        const product = await Product
+            .find(request.param('id'))
         if (!product) {
             return 'Product not found'
         }
         await product.delete()
         return response.redirect('/admin/products')
-    })
+    }
+)
 
 // delete product
 
@@ -133,9 +136,9 @@ router
 // delete user
 
 router
-    .get('/users/delete/:id', async ({request, response}) => {
-        const user = await
-            User.find(request.param('id'))
+    .delete('/users/delete/:id', async ({request, response}) => {
+        const user = await User
+            .find(request.param('id'))
         if (!user) {
             return 'User not found'
         }

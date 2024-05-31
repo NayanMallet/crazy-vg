@@ -36,7 +36,7 @@ export default class UsersController {
     }
 
 
-    async destroy({ params, response }: HttpContext) {
+    async delete({ params, response }: HttpContext) {
         const user = await User.find(params.id)
         if (!user) {
             return response.notFound('User not found')
@@ -45,3 +45,4 @@ export default class UsersController {
         return response.redirect('/admin/users')
     }
 }
+

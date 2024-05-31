@@ -37,7 +37,7 @@ export function ShopHeader(props: Props) {
                     <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                         <div class="h-12 rounded-full">
                             <img alt="avatar"
-                                src={loggedUser.avatarUrl ?? "https://i.pravatar.cc/500?img=32"} />
+                                 src={loggedUser.avatarUrl ?? "https://i.pravatar.cc/500?img=32"} />
                         </div>
                     </div>
                     <ul tabindex="0"

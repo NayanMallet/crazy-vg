@@ -69,10 +69,10 @@ export function UsersList(props: Props) {
                                         </div>
 
                                         <button type="submit" class="btn btn-primary">Modify</button>
-                                        
+
                                     </form>
                                     <div class="modal-action">
-                                        <form action={`/users/delete/${user.id}`} method="POST" enctype="multipart/form-data">
+                                        <form action={`/users/delete/${user.id}`} method="DELETE" enctype="multipart/form-data">
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                         <form method="dialog">
