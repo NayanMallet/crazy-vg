@@ -103,7 +103,7 @@ router
 // delete product
 
 router
-    .delete('/products/delete/:id', async ({request, response}) => {
+    .post('/products/delete/:id', async ({request, response}) => {
         const product = await Product
             .find(request.param('id'))
         if (!product) {
@@ -141,7 +141,7 @@ router
 // delete user
 
 router
-    .delete('/users/delete/:id', async ({request, response}) => {
+    .post('/users/delete/:id', async ({request, response}) => {
         const user = await User
             .find(request.param('id'))
         if (!user) {
