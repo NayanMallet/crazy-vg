@@ -51,7 +51,7 @@ export function AdminHeader(props: Props = {}) {
                     <ul tabindex="0"
                         class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-52">
                         <li>
-                            <a class="justify-between" href="shop/profile">
+                            <a class="justify-between" href="/profile">
                                 Profile
                             </a>
                         </li>
