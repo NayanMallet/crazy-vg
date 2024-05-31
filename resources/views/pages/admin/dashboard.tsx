@@ -40,7 +40,7 @@ export function Dashboard(props: Props) {
         <AdminLayout
             title={'Dashboard'}
             navigation={<AdminMenu items={routes} settingsUrl={"admin/settings"}/>}
-            header={<AdminHeader pageTitle={"Hey " + user.firstName + " !"} loggedUser={user} />}
+            header={<AdminHeader pageTitle={"Hey " + user.firstName + " !"} userUrl={"shop/profile"} loggedUser={user} />}
             main={<AdminMainMenu/>}
         />
     );

@@ -3,11 +3,12 @@ import { document } from "postcss";
 
 type Props = {
     pageTitle?: string;
+    userUrl: string;
     loggedUser: User;
 }
 
 export function AdminHeader(props: Props = {}) {
-    const { pageTitle, loggedUser } = props;
+    const { pageTitle,userUrl, loggedUser } = props;
 
 
     return (
@@ -50,14 +51,16 @@ export function AdminHeader(props: Props = {}) {
                     <ul tabindex="0"
                         class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-52">
                         <li>
-                            <a class="justify-between">
+                            <a class="justify-between" href="shop/profile">
                                 Profile
                             </a>
                         </li>
-                        <li><a>Logout</a></li>
+                        <li>
+                            <a href="/logout">Logout</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </main>
-);
+    );
 }
