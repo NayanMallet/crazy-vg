@@ -17,21 +17,21 @@ export async function AdminProducts(props: Props) {
     const products = await Product.all(); // Récupérer tous les produits
 
     const routes = [
-        {
+        /* {
             name: "Dashboard",
             route: "/admin",
             icon: Home,
-        },
+        }, */
         {
             name: "Utilisateurs",
             route: "/admin/users",
             icon: UserIcon
-        },
+        },/* 
         {
             name: "Commandes",
             route: "/admin/orders",
             icon: Recipe
-        },
+        }, */
         {
             name: "Produits",
             route: "/admin/products",

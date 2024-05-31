@@ -11,22 +11,22 @@ interface Props {
 }
 
 const routes = [
-    {
+   /*  {
         name: "Dashboard",
         route: "/admin",
         icon: Home,
-    },
+    }, */
     {
         name: "Utilisateurs",
         route: "/admin/users",
         icon: UserIcon,
         active: true
     },
-    {
+    /* {
         name: "Commandes",
         route: "/admin/orders",
         icon: Recipe
-    },
+    }, */
     {
         name: "Produits",
         route: "/admin/products",
