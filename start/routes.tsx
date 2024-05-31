@@ -63,7 +63,12 @@ router
     .use([middleware.auth(), middleware.admin()])
     .as('shop.profile')
 
-
+router
+    .get('/admin/profile', async (ctx) => {
+        return <Profile user={ctx.auth.user!} />
+    })
+    .use([middleware.auth(), middleware.admin()])
+    .as('admin.profile')
 
 // make a toute for the product page according to the product id
 router
